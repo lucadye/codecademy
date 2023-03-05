@@ -1,0 +1,96 @@
+/** {
+	all: unset;
+}
+
+head * {
+	display: none;
+}
+
+body * {
+	display: block;
+}
+
+/* Headers  *//*
+h1, h2, h3,
+h4, h5, h6 {
+	font-weight: 900;
+}
+h1 {
+	font-size: 6rem;
+}
+h2 {
+	font-size: 4rem;
+}
+h3 {
+	font-size: 3rem;
+}
+h4 {
+	font-size: 3.5rem;
+}
+h5 {
+	font-size: 3rem;
+}
+h6 {
+	font-size: 2.5rem;
+}
+
+/* Text *//*
+p {
+	font-size: 1rem;
+}
+b, strong {
+	font-weight: bolder;
+}
+i, em {
+	font-style: italic;
+}
+
+/* Hyperlinks *//*
+a {
+	cursor: pointer;
+}
+a:link {
+  color: #77F;
+}
+a:visited {
+  color: #F3F;
+}
+a:hover {
+  color: #33F;
+}
+a:active {
+  color: #00F;
+}
+
+/* Lists *//*
+
+menu {
+  display: block;
+  list-style-type: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+ul {
+  display: block;
+  list-style-type: circle;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+li {
+
+}*/
