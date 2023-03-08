@@ -1,0 +1,177 @@
+/* Imports  */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Permanent+Marker&family=Rokkitt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Share+Tech+Mono&display=swap');
+
+/* Properties */
+:root {
+	--font-wide: 'Audiowide', cursive;
+	--font-cursive: 'Permanent Marker', cursive;
+	--font-serif: 'Rokkitt', serif;
+	--font-mono: 'Share Tech Mono', monospace;
+}
+
+body {
+	font-family: var(--font-serif);
+	font-weight: 500;
+}
+
+/* Color-blocks */
+.color {
+	border: solid 0.25rem black;
+	display: inline-block;
+	margin-right: 0.5rem;
+	margin-bottom: 3rem;
+}
+.color > .name {
+	height: 6rem;
+	width: 10rem;
+	margin-block: unset;
+	border-bottom: solid 0.25rem black;
+	display: inline-block;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 2rem;
+	font-weight: 700;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+.color > .description {
+	color: black;
+	font-family: 'Rokkitt', serif;
+	font-weight: 500;
+	text-align: center;
+	margin: 1rem 0.5rem;
+}
+
+.color > .codes {
+	padding: 0;
+}
+
+.color > .codes > li {
+	margin: auto 0.5rem;
+	list-style: none;
+	display: block;
+}
+
+.color-a > .name {
+	background-color: #d33737;
+	color: black;
+}
+.color-b > .name {
+	background-color: #b5d138;
+	color: black;
+}
+.color-c > .name {
+	background-color: #38d170;
+	color: black;
+}
+.color-d > .name {
+	background-color: #387dd1;
+	color: black;
+}
+.color-e > .name {
+	background-color: #a337ce;
+	color: black;
+}
+.color-f > .name {
+	background-color: #1c2f15;
+	color: white;
+}
+.color-g > .name {
+	background-color: #faf7e5;
+	color: black;
+}
+
+.font-wide,
+.font-cursive,
+.font-serif,
+.font-mono {
+	display: inline-block;
+	background-color: transparent;
+	border: 0.5rem black solid;
+	padding: 1rem;
+	margin: 1rem auto;
+	width: 40rem;
+}
+
+.font-wide {
+	font-family: var(--font-wide);
+}
+.font-cursive {
+	font-family: var(--font-cursive);
+}
+.font-serif {
+	font-family: var(--font-serif);
+}
+.font-mono {
+	font-family: var(--font-mono);
+}
+
+.font-wide > .name,
+.font-cursive > .name,
+.font-serif > .name,
+.font-mono > .name {
+	color: black;
+	font-family: inherit;
+	font-size: 3rem;
+}
+
+.font-wide > .lorem-fox,
+.font-cursive > .lorem-fox,
+.font-serif > .lorem-fox,
+.font-mono > .lorem-fox {
+	color: black;
+	font-family: inherit;
+	font-size: 1.5rem;
+}
+
+.font-wide > .description,
+.font-cursive > .description,
+.font-serif > .description,
+.font-mono > .description {
+	color: black;
+	font-family: inherit;
+	font-size: 1.5rem;
+	display: inline-block;
+}
+
+code {
+	font-family: var(--font-mono);
+}
+
+strong, em {
+	text-decoration: underline;
+}
+
+h1,h2,h3,
+h4,h5,h6 {
+	margin-bottom: 0.25rem;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 4.5rem;
+}
+h2 {
+	font-size: 4rem;
+}
+h3 {
+	font-size: 3.5rem;
+}
+h4 {
+	font-size: 3rem;
+}
+h5 {
+	font-size: 2.5rem;
+}
+h6 {
+	font-size: 2rem;
+}
+
+p,b,i,strong,em,a {
+	font-family: var(--font-serif);
+	font-size: 1rem;
+}
+
+a {
+	color: #387dd1;
+}
