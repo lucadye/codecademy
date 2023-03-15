@@ -24,7 +24,6 @@ h4,h5,h6 {
 /* Header */
 
 header {
-	display: block;
 	background-color: var(--color-light);
 	border-bottom: 0.125rem var(--color-middle) solid;
 	height: 5.5rem;
@@ -32,51 +31,37 @@ header {
 	position: fixed;
 	left: 0;
 	top: 0;
-}
-
-header .logo-container {
 	display: inline-flex;
-	text-decoration: none;
 	align-items: center;
+	justify-content: space-between;
 }
 
-header .logo-container h1 {
+header a h1 {
 	display: inline-block;
 	color: var(--color-dark);
 	text-decoration: none;
 	text-transform: uppercase;
-}
-
-header .logo-container .image-container {
-	width: 4rem;
-	height: auto;
-	display: inline-block;
-	margin: 0.5rem;
-}
-
-header .logo-container .image-container img {
-	width: 100%;
-	height: auto;
-	display: inline-block;
+	font-size: 2rem;
+	margin-left: 1rem;
 }
 
 header nav {
 	display: inline-flex;
 	align-items: center;
-	margin-right: 1.5rem;
-	justify-content: space-around;
-	width: 100%;
+	justify-content: space-between;
+	width: auto;
 	height: inherit;
+	margin-right: 1rem;
 }
 
-header nav.small {
+header.small {
 	display: none;
 }
 
 .btn {
 	display: inline-block;
-	margin-left: 0.125rem;
-	margin-right: 0.125rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
 	transition: 0.25s;
 	padding: 0.75rem;
 	border-radius: 1rem;
@@ -101,10 +86,10 @@ header nav.small {
 }
 
 @media only screen and (max-width: 750px) {
-	header nav.big {
+	header.big {
 		display: none;
 	}
-	header nav.small {
+	header.small {
 		display: inline-flex;
 	}
 }
