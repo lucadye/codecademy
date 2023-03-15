@@ -105,7 +105,7 @@ main {
 	margin-bottom: 8.125rem;
 	display: flex;
 	flex-direction: column;
-	width: 100vw;
+	width: calc(100vw - 17px);
 	background-color: var(--color-dark);
 	z-index: -10;
 }
