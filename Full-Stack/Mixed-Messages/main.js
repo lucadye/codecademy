@@ -29,8 +29,12 @@ const quote = {
 	},
 };
 
-function display(message) {
+function display(message, element) {
 	console.log(message);
+	element.innerHTML = message;
 }
 
-display(quote.new);
+
+document.getElementsByName('inspiration').forEach((element) => {
+	display(quote.new, element);
+});
