@@ -3,6 +3,11 @@ function rand_item(arr) {
 }
 
 const quote = {
+	_previous: [
+		'',
+		'',
+		'',
+	],
 	_starts: [
 		'Remember,',
 		'Don\'t forget,',
@@ -22,19 +27,64 @@ const quote = {
 		'wonderful.'
 	],
 	get new () {
-		const start = rand_item(this._starts);
-		const middle = rand_item(this._middles);
-		const end = rand_item(this._ends);
+		let start = rand_item(this._starts);
+		while (start == this._previous[0]) {
+			start = rand_item(this._starts);
+		}
+		this._previous[0] = start;
+
+		let middle = rand_item(this._middles);
+		while (middle == this._previous[1]) {
+			middle = rand_item(this._middles);
+		}
+		this._previous[1] = middle;
+
+		let end = rand_item(this._ends);
+		while (end == this._previous[2]) {
+			end = rand_item(this._ends);
+		}
+		this._previous[2] = end;
+
 		return `${start} ${middle} ${end}`;
 	},
 };
 
-function display(message, element) {
-	console.log(message);
-	element.innerHTML = message;
+const background = {
+	_previous: '',
+	_urls: [
+		'./images/a.jpg',
+		'./images/b.jpg',
+		'./images/c.jpg',
+		'./images/d.jpg'
+	],
+	get new () {
+		let url = rand_item(this._urls);
+
+		while (url == this._previous) {
+			url = rand_item(this._urls);
+		}
+
+		this._previous = url;
+
+		return url;
+	},
 }
 
+function text(message, element) {
+	console.log(message);
+	element.innerHTML = message;
+};
+function picture(image, element) {
+	console.log(image);
+	element.setAttribute('src', image);
+};
 
-document.getElementsByName('inspiration').forEach((element) => {
-	display(quote.new, element);
+const quotes = document.getElementsByName('inspire-quote');
+quotes.forEach(q => {
+	text(quote.new, q);
+});
+
+const images = document.getElementsByName('inspire-image');
+images.forEach(i => {
+	picture(background.new, i);
 });
