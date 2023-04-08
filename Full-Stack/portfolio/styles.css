@@ -1,0 +1,287 @@
+/*
+red: #cc4328
+green: #61cc28
+cyan: #28b3cc
+*/
+
+html {
+	font-size: 16px;
+	font-family: 'Helvetica';
+	margin: 0;
+	padding: 0;
+	display: block;
+	background-color: #cc4328;
+}
+
+head {
+	display: none;
+}
+
+body {
+	font-size: inherit;
+	font-family: inherit;
+	margin: inherit;
+	padding: inherit;
+	display: inherit;
+	width: 100%;
+}
+
+body * {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+span {
+	display: inline-block;
+	font-family: monospace;
+}
+
+svg {
+	max-height: 3em;
+	min-height: 3em;
+	max-width: 3em;
+	min-width: 3em;
+	display: inline-block;
+}
+
+a.button, input[type="submit"], button {
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	text-decoration: none;
+	font-weight: bold;
+	color: #28b3cc;
+	background-color: #fff0;
+	padding: 1rem;
+	border-radius: 1rem;
+	border: solid 0.1875em #28b3cc;
+	transition: 0.25s;
+	text-align: center;
+}
+
+a.button:hover, input[type="submit"]:hover, button:hover {
+	color: #fff;
+	background-color: #28b3cc;
+}
+
+a.button:active, input[type="submit"]:active, button:active {
+	color: #28b3cc;
+	background-color: #fff0;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 5em;
+	width: 100%;
+	border-bottom: solid 0.25em #cc432877;
+	background-color: #FCF2F1;
+
+	display: flex;
+	justify-content: space-between;
+
+	align-items: center;
+
+	flex-wrap: nowrap;
+
+	flex-direction: row;
+}
+
+header h1 {
+	flex-grow: 1;
+	font-size: 3rem;
+	margin-left: 2rem;
+	color: #cc4328;
+}
+
+header nav {
+	flex-grow: 3;
+
+	display: flex;
+	justify-content: flex-end;
+
+	align-items: center;
+
+	flex-wrap: nowrap;
+
+	flex-direction: row;
+}
+
+header nav a {
+	display: inline-block;
+	font-size: 1rem;
+	margin-right: 2rem;
+	text-decoration: none;
+	font-weight: bold;
+	color: #cc4328;
+	background-color: #fff0;
+	padding: 1rem;
+	border-radius: 1rem;
+	border: solid 0.25rem #cc4328;
+	transition: 0.25s;
+}
+
+header nav a:hover {
+	color: #fff;
+	background-color: #cc4328;
+}
+
+header nav a:active {
+	color: #cc4328;
+	background-color: #fff0;
+}
+
+main {
+	width: 100%;
+	margin-top: 5.25em;
+	display: grid;
+	background-color: #28b3cc;
+}
+
+section.large-content {
+	display: grid;
+	grid-template: repeat(3, minmax(min-content, max-content)) / 1fr 1fr;
+	grid-template-areas:
+		"heading image"
+		"big     image"
+		"buttons image";
+	grid-auto-flow: row;
+	grid-auto-rows: minmax(min-content, max-content);
+	grid-gap: 1rem  1rem;
+	width: 75%;
+	padding: 3rem 12.5%;
+	margin: 0 auto;
+	background-color: #fffe;
+}
+
+section.large-content > ul {
+	grid-area: buttons;
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	justify-content: left;
+	flex-wrap: wrap;
+}
+
+section.large-content > ul > li {
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+}
+
+section.large-content > ul > li > a.button {
+	font-size: 2rem;
+	height: fit-content;
+	max-height: 3rem;
+}
+
+section.large-content > ul > li > a {
+	width: fit-content;
+	height: fit-content;
+	margin: auto 1em auto 0;
+}
+
+section.large-content > ul > li > a > svg {
+	width: 3em;
+	height: 3em;
+	background-color: transparent;
+	color: #28b3cc;
+	padding: 0.5em;
+	border-radius: 1em;
+	transition: 0.25s;
+	border: solid 0.25em #28b3cc;
+}
+
+section.large-content > ul > li > a > svg:hover {
+	border-color: #transparent;
+	background-color: #28b3cc;
+	width: 3em;
+	height: 3em;
+	color: #F1FAFC;
+}
+
+section.large-content > ul > li > a > svg:active {
+	border-color: #28b3cc;
+	background-color: transparent;
+}
+
+section.large-content > h2 {
+	grid-area: heading;
+	width: fit-content;
+	height: fit-content;
+	font-size: 6rem;
+	font-weight: bold;
+	margin: auto auto 0 0;
+	color: #082429;
+}
+
+section.large-content > p.big {
+	font-size: 1.75rem;
+	grid-area: big;
+}
+
+section.large-content > p {
+	font-size: 1.25rem;
+	color: #082429;
+	margin: 1rem 0;
+	width: 87.5%;
+}
+
+section.large-content > img {
+	grid-area: image;
+}
+
+section.container {
+	background-color: #61cc28;
+	width: 75%;
+	padding: 2rem 12.5%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+section.container > h2 {
+	font-size: 4em;
+	display: block;
+	height: min-content;
+	padding: 2rem;
+	text-align: center;
+	background-color: #fffe;
+	margin: 2rem 25% 1rem;
+	border-radius: 0.5rem;
+	background-color: #fffe;
+	transition: 0.5s;
+	color: #132908;
+}
+
+section.container > section.content {
+	background-color: #fffe;
+	display: inline-block;
+	width: 22rem;
+	height: 22rem;
+	padding: 2rem;
+	margin: 1.5rem 1rem;
+	border-radius: 0.5rem;
+	transition: 0.5s;
+}
+
+section.container > section.content > svg {
+	margin-bottom: 1em;
+	color: #132908;
+}
+
+section.container > section.content > h3 {
+	font-size: 2em;
+	margin-bottom: 1em;
+	color: #132908;
+}
+
+section.container > section.content > p {
+	font-size: 1.25em;
+	color: #132908;
+}
