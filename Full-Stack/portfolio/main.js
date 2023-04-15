@@ -66,23 +66,6 @@ function yearsSince(date, containerSelector) {
 monthsSince("9-29-2022", ".programming-years");
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function displayText(text, selector) {
   const containers = document.querySelectorAll(selector);
   containers.forEach((i) => {
