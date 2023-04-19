@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script>
+			window.location.href = "../index.html";
+		</script>
 		<!-- meta -->
 		<meta charset="UTF-8">
 		<!--
@@ -11,27 +14,48 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- imports -->
-		<script src="https://kit.fontawesome.com/833db8f3ed.js" defer crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../styles.css"/>
 
 		<title>Luca Dye</title>
 	</head>
 	<body>
-		<header>
-			<h1>Luca Dye</h1>
-			<nav>
-				<a href="./index.html">About Me</a>
-				<a href="./projects.html">Projects</a>
-				<a href="./skills.html">Skills</a>
-				<a href="./contact.html">Contact</a>
-			</nav>
+		<header class="desktop">
+			<a href="./index.html"><h1>Luca Dye</h1></a>
+		</header>
+		<header class="mobile">
+			<a href="./index.html"><h1>Luca Dye</h1></a>
 		</header>
 		<main>
-
+			<section class='large-content'>
+				<h2>Welcome!</h2>
+				<ul>
+					<li><a href="mailto:lucadye@gmail.com">E-mail</a></li>
+					<li><a href="https://github.com/lucadye">GitHub</a></li>
+					<li><a href="./projects.html" class="button">My Projects</a></li>
+				</ul>
+				<img src=""/>
+				<p>I've been programming since 2022. I'm a Web Developer fluent in HTML, CSS, JavaScript, and also Python, with some experience in C and C#, and I'm familiar with Bash, Command Prompt, and SQL. My areas of interest include puzzle solving, design, and database design.</p>
+				<p>I love solving puzzles and I'm always looking for new challenges to push my skills. In my free time, I enjoy working on personal projects. I also have an eye for design and enjoy creating aesthetically pleasing websites and applications.</p>
+				<p class="big">Thank you for visiting my portfolio website! I'm excited to showcase my work and skills, and I hope you enjoy exploring my projects!</p></section>
+			</section>
+			<section class='container' id='skills'>
+				<h2>My skills</h2>
+				<section class='content'>
+					<h3>Web Development</h3>
+					<p>In web development, I build websites using HTML, CSS, JavaScript, and web frameworks like Node.js and Flask. I am committed to creating websites that are both functional and visually appealing, and I enjoy finding innovative solutions to design challenges.</p>
+				</section>
+				<section class='content'>
+					<h3>Python</h3>
+					<p>As a Python developer, I have experience creating software for various applications, including data analysis and web development. I have worked with libraries like Beautiful Soup to crawl and scrape the web and Flask and Jinja2 to create web pages.</p>
+				</section>
+				<section class='content'>
+					<h3>SQL</h3>
+					<p>I also have knowledge of database design and SQL, which allows me to create efficient and effective database systems for applications. I have experience in designing and implementing database schemas, writing complex queries, and optimizing database performance.</p>
+				</section>
+			</section>
 		</main>
-
 		<footer>
-
+			<p>Built by Luca Dye</p>
 		</footer>
 	</body>
 </html>
