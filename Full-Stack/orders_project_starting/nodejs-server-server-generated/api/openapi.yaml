@@ -1,0 +1,137 @@
+openapi: 3.0.1
+info:
+  title: Online Order API
+  description: A basic API for working with the Swagger tools.
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /orders:
+    summary: Get all of the orders data
+    description: This path is used to retrieve all of the orders data from the orders.json
+      file.
+    get:
+      tags:
+      - Orders
+      summary: Get all of the orders data
+      description: Retrieve the order information from the orders.json file.
+      operationId: get_orders
+      responses:
+        "200":
+          description: All of the orders data.
+          content:
+            application/json:
+              examples:
+                orders:
+                  value: "{\"orders\":[{\"name\":\"Carey Maynard\",\"id\":\"001\"\
+                    ,\"state\":\"pending\"},{\"name\":\"Angelo Ayala\",\"id\":\"002\"\
+                    ,\"state\":\"canceled\"},{\"name\":\"Regina Yates\",\"id\":\"\
+                    003\",\"state\":\"pending\"},{\"name\":\"Elliott Mcclure\",\"\
+                    id\":\"004\",\"state\":\"pending\"}]}"
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: Orders
+  /neworder:
+    summary: Add new orders
+    description: This path is used to add a new order to the orders.json file.
+    post:
+      tags:
+      - New Order
+      summary: Add new orders
+      description: Add a new order to the orders.json file.
+      operationId: post_neworder
+      requestBody:
+        description: A new order object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        "201":
+          description: The new order's data.
+          content:
+            application/json:
+              examples:
+                new order:
+                  value: |-
+                    {
+                      "name": "Valeria Carlson",
+                      "id": "005",
+                      "state": "pending"
+                    }
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: NewOrder
+  /update/{id}:
+    summary: Update the state of an order
+    description: This path is used to change the status of an order matching the provided
+      id. It modifies the state attribute of each order.
+    put:
+      tags:
+      - Update Order
+      summary: Update an order
+      description: Update the state of an order with a matching id in the orders.json
+        file.
+      operationId: put_updateid
+      parameters:
+      - name: id
+        in: path
+        description: The id of the order.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: The order's updated data.
+          content:
+            application/json:
+              examples:
+                Updated Order:
+                  value: "{\"name\":\"Carey Maynard\",\"id\":\"001\",\"state\":\"\
+                    canceled\"}"
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: UpdateOrder
+  /delete/{id}:
+    summary: Delete an order
+    description: This path is used to delete an order with a matching id.
+    delete:
+      tags:
+      - Delete Order
+      summary: Delete an order
+      description: Delete an order with a matching id from the orders.json file.
+      operationId: delete_order
+      parameters:
+      - name: id
+        in: path
+        description: The id of the order.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: "No body, as the order has been deleted."
+          content:
+            text/plain; charset=utf-8:
+              examples:
+                Deleted Order: {}
+        default:
+          description: Default error sample response
+      x-swagger-router-controller: DeleteOrder
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+        state:
+          type: string
+      xml:
+        name: Order
