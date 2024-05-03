@@ -6,8 +6,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { VictoryPie, VictoryTooltip } from 'victory';
 import Modal from './components/Modal';
 import ExpenseList from './components/ExpenseList';
-// import functions to interact with controller.
-import { expenseByCategory } from './utils';
+import { fetchExpenses, expenseByCategory } from './utils';
 import './App.css';
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
   const [id, setId] = useState(false);
   const [selectDate, setSelectDate] = useState(new Date());
   useEffect(() => {
-    // update view from model w/ controller
+    fetchExpenses().then((res) => setExpenses(res));
   }, []);
 
   return (
@@ -39,7 +38,8 @@ function App() {
               minDate={new Date('2017-01-01')}
               onChange={(newValue) => {
                 setSelectDate(newValue);
-                // update view from model w/ controller
+                fetchExpenses(newValue.getTime())
+                  .then((res) => setExpenses(res));
                 
               }}
               slotProps={{ textField: { variant: 'outlined' } }}
@@ -83,8 +83,7 @@ function App() {
           modal
           expenses={expenses}
           refreshExpenses={async () => {
-            // update view from model w/ controller
-            const res = [];
+            const res = await fetchExpenses(selectDate.getTime());
             setExpenses(res)
           }}
           _id={id}
